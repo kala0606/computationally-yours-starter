@@ -18,11 +18,44 @@ Read identity.md and manifesto.md before suggesting anything creative.
 
 ## How the code is built
 
-- Language and setup: [e.g. JavaScript with p5.js / Python with ...]
-- Every parameter lives in config/params.json, with a default and a range.
-- All randomness comes from one seeded generator. Same seed and params, same output.
-- Outputs are saved to outputs/digital/ as NNN_seed-SEED_[key params].svg (or .png).
+- Language: JavaScript, in the press (see above). No build step.
+- Outputs are saved to outputs/digital/ as NNN_seed-SEED_[key params].svg (the press names downloads the same way).
 - Keep the code small enough for the student to read and explain.
+
+## The press: how this project is built
+
+This project is a "press": a web page (index.html) where the student and
+visitors set parameters, choose a seed, preview and download. It is
+published as the project's GitHub Pages site.
+
+- The student's rules live ONLY in src/system.js, in
+  `export function draw(pen, p, chance, page)`. Draw with the pen
+  (millimetres): pen.line, pen.polyline, pen.circle, pen.rect, pen.path,
+  pen.stroke(colour), pen.weight(mm), pen.layer(name).
+- Every dial lives in config/params.json under "params", each with key,
+  label, type (range, number, toggle, select, color, text), its range, a
+  default "value" and the identity's "reason". The press builds its
+  controls from this file. Keep "identity", "title" and "paper" up to date.
+- All randomness comes from `chance` (chance.random, range, int, pick,
+  gauss, noise). Never use Math.random() in src/: seeds must reproduce.
+- Don't edit press/ unless the student asks to change how the press looks
+  or works. Restyling press/press.css for the identity is welcome when asked.
+- Plotter output is the SVG download (strokes only, one layer per pen).
+  Archival output is the PNG download at 300 PPI. For resin, add an STL
+  export only when the student's pathway needs it, and explain it.
+
+When the student says:
+
+- "preview": start a local web server in the project folder (for example
+  `python3 -m http.server 8000`) and give them the link to open.
+- "render twenty" (or another number): run `node press/render.mjs 1-20`,
+  which writes SVGs named by seed into outputs/digital/, then tell them
+  what was written.
+- "make a dial for …": add a parameter to config/params.json with a sensible
+  range, and use it in src/system.js. Ask the student for the reason.
+- "publish": push, then make sure GitHub Pages is on for the main branch,
+  root folder, and give them the site link: https://USERNAME.github.io/REPO/
+  (it updates about a minute after each push).
 
 ## Git and GitHub: you do all of it
 
@@ -31,13 +64,15 @@ plain words (and anything that clearly means the same):
 
 - "push" / "save" / "upload": stage everything, commit with a short message
   that says what changed (log entries: "log: day NN"), push to origin, then
-  reply in one or two lines: what was saved, and the repository link.
+  reply in one or two lines: what was saved, the repository link and the
+  press site link.
 - "checkpoint": commit without pushing, before a risky change. Start the
   message with "checkpoint:".
 - "go back" / "undo": say in plain language what has changed since the last
   commit. Only on the student's yes, restore the last commit.
 - "status": say in plain words what has changed and whether everything is pushed.
-- "is it online?": check the repository on GitHub and say what a visitor sees.
+- "is it online?": check the repository and the press site on GitHub Pages,
+  and say what a visitor sees.
 
 Rules:
 
@@ -60,5 +95,5 @@ Rules:
 
 ## Run
 
-[the command to run the system]
-[the command to render a batch of seeds]
+Preview: a local web server in this folder, then open index.html.
+Batch: node press/render.mjs 1-20

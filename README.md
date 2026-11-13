@@ -5,6 +5,8 @@
 Made by [your name] in Computationally Yours: Out of One's Place,
 Srishti Manipal Institute, Interim 2026.
 
+**The press:** https://[username].github.io/[repository]/ — set the dials, choose a seed, download.
+
 ## The work
 
 [Two or three sentences on what the system makes and the artefact in the exhibition.]
@@ -25,7 +27,8 @@ See [manifesto.md](manifesto.md).
 
 ## Run it
 
-[The exact commands to install and run the system, and to render a seed.]
+Open the press link above. To work on it locally, ask Codex to "preview".
+The rules are in `src/system.js`; the dials are in `config/params.json`.
 
 ## Files
 

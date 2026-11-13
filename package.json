@@ -1,0 +1,6 @@
+{
+  "name": "computationally-yours-press",
+  "private": true,
+  "type": "module",
+  "scripts": { "render": "node press/render.mjs" }
+}

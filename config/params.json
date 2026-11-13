@@ -1,3 +1,16 @@
 {
-  "seed": 1
+  "title": "Untitled system",
+  "identity": "[Identity name]",
+  "paper": { "name": "A2", "width": 420, "height": 594, "margin": 20 },
+  "background": "#f7f4ea",
+  "seed": 1,
+  "params": [
+    { "key": "rows",     "label": "Rows",        "type": "range",  "min": 4,   "max": 160, "step": 1,    "value": 48,   "reason": "Why the identity draws this many. Write your reason here." },
+    { "key": "scale",    "label": "Field scale", "type": "range",  "min": 0.2, "max": 8,   "step": 0.1,  "value": 1.6,  "reason": "" },
+    { "key": "drift",    "label": "Drift",       "type": "range",  "min": 0,   "max": 4,   "step": 0.05, "value": 1.2,  "reason": "" },
+    { "key": "jitter",   "label": "Jitter (mm)", "type": "range",  "min": 0,   "max": 1,   "step": 0.01, "value": 0.08, "reason": "" },
+    { "key": "pen",      "label": "Pen (mm)",    "type": "range",  "min": 0.1, "max": 1.2, "step": 0.05, "value": 0.35, "reason": "" },
+    { "key": "emphasis", "label": "Second pass", "type": "toggle", "value": true, "reason": "" },
+    { "key": "ink",      "label": "Ink",         "type": "color",  "value": "#111110", "reason": "" }
+  ]
 }

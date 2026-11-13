@@ -24,6 +24,34 @@ Read identity.md and manifesto.md before suggesting anything creative.
 - Outputs are saved to outputs/digital/ as NNN_seed-SEED_[key params].svg (or .png).
 - Keep the code small enough for the student to read and explain.
 
+## Git and GitHub: you do all of it
+
+The student never types git or gh commands. You run them. Respond to these
+plain words (and anything that clearly means the same):
+
+- "push" / "save" / "upload": stage everything, commit with a short message
+  that says what changed (log entries: "log: day NN"), push to origin, then
+  reply in one or two lines: what was saved, and the repository link.
+- "checkpoint": commit without pushing, before a risky change. Start the
+  message with "checkpoint:".
+- "go back" / "undo": say in plain language what has changed since the last
+  commit. Only on the student's yes, restore the last commit.
+- "status": say in plain words what has changed and whether everything is pushed.
+- "is it online?": check the repository on GitHub and say what a visitor sees.
+
+Rules:
+
+- Never force-push, rewrite or delete history, or change branches unasked.
+- Never commit .env files, keys, passwords or personal data.
+- Before committing any file over 50 MB, stop and suggest adding it to
+  .gitignore and keeping it on the studio drive.
+- If a push is rejected, pull and merge. If there is a conflict, stop and
+  explain it in plain words before touching anything.
+- Show the student what you ran in one short line, but never ask them to
+  type a git command.
+- Near the end of a studio day (around 3:30), if there are unpushed
+  changes, remind the student to say "push".
+
 ## Don't touch
 
 - data/ (raw data is read, never modified)

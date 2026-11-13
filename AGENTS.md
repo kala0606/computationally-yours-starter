@@ -18,7 +18,7 @@ Read identity.md and manifesto.md before suggesting anything creative.
 
 ## How the code is built
 
-- Language: JavaScript, in the press (see above). No build step.
+- Language: JavaScript, in the press (see "The press" below). No build step.
 - Outputs are saved to outputs/digital/ as NNN_seed-SEED_[key params].svg (the press names downloads the same way).
 - Keep the code small enough for the student to read and explain.
 

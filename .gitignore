@@ -1,0 +1,18 @@
+# system files
+.DS_Store
+Thumbs.db
+
+# dependencies and caches
+node_modules/
+__pycache__/
+.venv/
+
+# secrets: never commit these
+.env
+*.key
+
+# large files: store on the studio drive instead
+*.mov
+*.mp4
+*.zip
+raw/

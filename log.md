@@ -1,6 +1,6 @@
 # Daily log
 
-One entry a day: Did, Decided, Image, Stuck. Guide: https://www.ujjwalagarwal.com/SMI/Interim26/log.html
+One entry a day: Did, Decided, Image, Stuck. Guide: https://www.ujjwalagarwal.com/SMI/Interim26/docs.html#entry
 
 ## Day 01 · Mon 23 Nov
 

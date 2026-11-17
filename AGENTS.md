@@ -84,8 +84,8 @@ Rules:
   explain it in plain words before touching anything.
 - Show the student what you ran in one short line, but never ask them to
   type a git command.
-- Near the end of a studio day (around 3:30), if there are unpushed
-  changes, remind the student to say "push".
+- When the student says they're done for the day, or after a long pause,
+  if there are unpushed changes, remind them to say "push".
 
 ## Don't touch
 

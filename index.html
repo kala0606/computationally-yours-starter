@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Press · Computationally Yours</title>
+<meta name="description" content="A generative press: set the parameters, choose a seed, and print.">
+<link rel="stylesheet" href="press/press.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111110'/%3E%3Crect x='3' y='3' width='14' height='26' fill='%23f7f4ea'/%3E%3Crect x='19' y='3' width='10' height='12' fill='%23db261f'/%3E%3Crect x='19' y='17' width='10' height='12' fill='%23f7f4ea'/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="top">
+  <div class="id"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><div><b id="identity">Loading…</b><span id="title"></span></div></div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="press" aria-selected="true">Press</button>
+    <button role="tab" data-tab="sheet" aria-selected="false">Sheet</button>
+    <button role="tab" data-tab="about" aria-selected="false">About</button>
+  </nav>
+</header>
+
+<main>
+  <section id="tab-press" class="tab press">
+    <aside class="controls">
+      <div class="seedbox">
+        <label for="seed">Seed</label>
+        <div class="seedrow">
+          <button type="button" id="seed-prev" aria-label="Previous seed">←</button>
+          <input id="seed" type="text" inputmode="numeric" spellcheck="false">
+          <button type="button" id="seed-next" aria-label="Next seed">→</button>
+          <button type="button" id="seed-rand" aria-label="Random seed" title="Random seed">⚄</button>
+        </div>
+      </div>
+      <div id="params"></div>
+      <button type="button" class="ghost" id="reset">Reset to defaults</button>
+    </aside>
+    <div class="stage-wrap">
+      <div class="stage" id="stage" aria-live="polite"></div>
+      <div class="bar">
+        <span class="status" id="status"></span>
+        <span class="actions">
+          <button type="button" class="primary" id="dl-svg">Download SVG</button>
+          <span class="png"><button type="button" id="dl-png">Download PNG</button><select id="ppi" aria-label="PNG resolution"><option value="72">screen</option><option value="150">150 PPI</option><option value="300" selected>300 PPI</option></select></span>
+          <button type="button" id="copy-link">Copy link</button>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section id="tab-sheet" class="tab sheet" hidden>
+    <div class="sheet-head"><p>Twenty seeds with the current parameters. Choose one to open it in the press.</p><span><button type="button" id="sheet-prev">← Previous 20</button><button type="button" id="sheet-next">Next 20 →</button></span></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="tab-about" class="tab about" hidden>
+    <article id="about"></article>
+  </section>
+</main>
+
+<footer class="foot"><span>A generative press · Computationally Yours · Srishti Manipal Institute · Interim 2026</span><a id="repo-link" href="#">Repository</a></footer>
+
+<script type="module" src="press/press.js"></script>
+</body>
+</html>
